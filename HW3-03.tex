@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{mathtools}
+\usepackage{dsfont}
+\usepackage{hyperref}
+
+\title{Structural Estimation HW3}
+\author{Sangwook Nam, Hojun Choi}
+\date{April 2020}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section*{Hendel and Nevo (2006)}
+\subsection*{Problem 1}
+Hendel and Nevo's Three Step Procedure goes as follows: a consumer first fixes the size of the product and then, conditional on the size, selects the brand. In particular, in the first stage, the authors recover the static parameters that determine the substitutability across brands via the marginal utility of income $\alpha$ and effects of advertising $\beta, \xi$; in the second stage, they compute the inclusive values and transition probabilities; then in the third stage, they estimate the utility and inventory cost parameters, which determine the responsiveness to prices in the quantity dimension.
+\newline
+\newline
+Given the intuition that $1- \lambda_{k}$'s parametrize correlations across brands of the same quantity (nest), $\lambda_{k}=1$ in the model.
+\newline
+\newline
+Their Three Step Procedure simplifies the problem by reducing the state space they have to consider and, by doing so, makes obtaining the transition probabilities in the dynamic programming feasible.
+
+\subsection*{Problem 2}
+As shown in Lemma 1 of the paper, a brand choice of consumers conditional on the quantity (size) purchased does not involve on dynamic consideration. However, a quantity decision conditional on a brand chosen may involve dynamic decisions, e.g., if a new brand is launched at $t$, then the decision model prior to $t$ and after $t$ may differ. Thus, Hendel and Nevo (2006) model the quantity the outer choice and the brand the inner choice. If they reversed the nested structure, they would not have the computational merit from the model.
+
+\section*{Erdem et al. (2003)}
+\subsection*{Problem 1}
+No. We cannot estimate Erdem et al. (2003)'s model with Hendel and Nuevo (2006)'s approach. Erdem et al. (2003) model unobersved taste heterogeneity of consumers which breaks down the complete separation of the brand and quantity choices \textit{a la} Hendel and Nuevo (2006). For instance, a consumer who is loyal to Heinz' will smooth and delay purchase of Heinz' ketchup while its price is high and expected to decline in the near future while a consumer who is indifferent between brands will choose the cheapest brand unless all ketchup prices are high.
+
+
+\subsection*{Problem 2}
+By considering ``non-perishable" goods, we can eliminate the newsvendor model\footnote{Note that the classical newsvendor problem is for perishable goods and does not have fixed costs, although some variations of it might.}. A classical operations model that considers how much quantity to order, given the unit price, deterministic demand, and fixed, holding, and backlog costs is the economic order quantity (EOQ) model. Next, in the second to the last paragraph, they mention the stochastic demand setting and allude to the dynamic lot-sizing model; in particular, they refer to the zero-inventory policy (see Wagner and Whitin (1958)).
+
+\subsection*{Problem 3}
+Consumers' decision making on buying, holding, and consuming ketchups takes place over time. This decision-making does not end and recur separately in each time period. Thus, the authors model the decision-making dynamics so that the model can incorporate the dependencies across time.
+
+\subsection*{Problem 4}
+It is due to the fact that they estimate \textit{when} consumers purchase (i.e., when they have some amount below a threshold) but not \textit{how much} they purchase. Moreover, Bray et al. (2019) describe the data with 246 dynamic programs, as opposed to only four or even one in Erdem et al. (2003) or Hendel and Nevo (2006), respectively. They are also able to customize their model, with a richer sample with more products ($N$) and time periods ($T$). 
+
+\end{document}
